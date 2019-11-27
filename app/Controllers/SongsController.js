@@ -10,13 +10,19 @@ function _drawResults() {
   document.querySelector("#songs").innerHTML = template
 }
 /**Draws the Users saved songs to the page */
-function _drawPlaylist() { }
+function _drawPlaylist() {
+  let template = ''
+  let mySongs = store.State.playlist
+  mySongs.forEach(song => template += song.playlistTemplate)
+  document.querySelector("#playlist").innerHTML = template
+}
 
 //Public
 export default class SongsController {
   constructor() {
     console.log('SongsController');
     store.subscribe("songs", _drawResults)
+    store.subscribe("playlist", _drawPlaylist)
   }
 
   /**Takes in the form submission event and sends the query to the service */
@@ -36,17 +42,9 @@ export default class SongsController {
    */
   addSong(id) {
     event.preventDefault()
-    let formData = event.target
-    let newSong = {
-      title: formData.title trackName.value,
-      albumArt: formData..value,
-      artist: formData..value,
-      album: formData..value,
-      price: formData..value,
-      preview: formData..value,
-      _id: formData..value
-    }
+    SongService.addSong(id)
   }
+
 
   /**
    * Takes in a song id to be removed from the users playlist and sends it to the server

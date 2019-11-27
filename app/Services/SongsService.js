@@ -1,5 +1,6 @@
 import Song from "../Models/Song.js";
 import store from "../store.js";
+import SongsController from "../Controllers/SongsController.js";
 
 // @ts-ignore
 let _sandBox = axios.create({
@@ -53,6 +54,15 @@ class SongsService {
    * @param {string} id
    */
   addSong(id) {
+    let newSong = store.State.songs.find(song => song._id == id)
+    _sandBox.post("", newSong).then(res => {
+      this.getMySongs()
+    }).catch(err => {
+      console.error(err)
+    })
+
+    // call _drawPlaylist() indirectly. Through subscribers?
+
     //TODO you only have an id, you will need to find it in the store before you can post it
     //TODO After posting it what should you do?
   }
