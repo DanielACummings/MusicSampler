@@ -25,7 +25,7 @@ class SongsService {
     // @ts-ignore
     $.getJSON(url)
       .then(res => {
-        let results = res.results.map(rawData => new Song(rawData));
+        let results = res.results.map(rawData => new Song(rawData))
         store.commit("songs", results);
       })
       .catch(err => {
@@ -40,13 +40,15 @@ class SongsService {
     _sandBox.get().then(res => {
       //TODO What are you going to do with this result
       let results = res.data.data.map(rawData => new Song(rawData))
-      store.commit("songs", results)
+      store.commit("playlist", results)
     })
       .catch(error => {
         throw new Error(error);
       });
 
   }
+
+
 
   /**
    * Takes in a song id and sends it from the search results to the sandbox to be saved.
@@ -61,8 +63,6 @@ class SongsService {
       console.error(err)
     })
 
-    // call _drawPlaylist() indirectly. Through subscribers?
-
     //TODO you only have an id, you will need to find it in the store before you can post it
     //TODO After posting it what should you do?
   }
@@ -73,6 +73,13 @@ class SongsService {
    * @param {string} id
    */
   removeSong(id) {
+    let delSong = store.State.playlist.find(song => song._id == id)
+    _sandBox.delete("", delSong).then(res => {
+      console.log(res);
+      this.getMySongs()
+    }).catch(err => {
+      console.error(err);
+    })
     //TODO Send the id to be deleted from the server then update the store
   }
 }

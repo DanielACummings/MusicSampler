@@ -24,6 +24,7 @@ export default class Song {
   }
 
   get playlistTemplate() {
+    debugger
     return /*html*/`
     <div class="card m-3">
     <img class="card-img-top " src="${this.albumArt}" alt="Card image cap">
