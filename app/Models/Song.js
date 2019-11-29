@@ -24,7 +24,6 @@ export default class Song {
   }
 
   get playlistTemplate() {
-    debugger
     return /*html*/`
     <div class="card m-3">
     <img class="card-img-top " src="${this.albumArt}" alt="Card image cap">
@@ -32,7 +31,7 @@ export default class Song {
         <h5 class="card-title">${this.title}</h5>
         <p class="card-text">Artist: ${this.artist}<br> Collection: ${this.album}<br> price: $${this.price}<br></p>
         <audio controls src="${this.preview}"></audio>
-        <button class="btn btn-danger" onclick="app.controllers.SongsController.removeSong('${this._id}')">Delete</button>
+        <button class="btn btn-danger" onclick="app.songsController.removeSong('${this._id}')">Delete</button>
     </div>
     </div>
         `;

@@ -58,6 +58,7 @@ class SongsService {
   addSong(id) {
     let newSong = store.State.songs.find(song => song._id == id)
     _sandBox.post("", newSong).then(res => {
+      console.log(res)
       this.getMySongs()
     }).catch(err => {
       console.error(err)
@@ -73,9 +74,9 @@ class SongsService {
    * @param {string} id
    */
   removeSong(id) {
-    let delSong = store.State.playlist.find(song => song._id == id)
-    _sandBox.delete("", delSong).then(res => {
-      console.log(res);
+    // let delSong = store.State.playlist.find(song => song._id == id)
+    _sandBox.delete(`${id}`).then(res => {
+      console.log(res)
       this.getMySongs()
     }).catch(err => {
       console.error(err);

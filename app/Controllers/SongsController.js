@@ -51,6 +51,7 @@ export default class SongsController {
    * @param {string} id
    */
   removeSong(id) {
+    console.log('removeSongController');
     SongService.removeSong(id)
   }
 }
