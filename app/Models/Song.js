@@ -1,3 +1,4 @@
+// adapter
 export default class Song {
   constructor(data) {
     this.title = data.trackName || data.title;
@@ -20,7 +21,7 @@ export default class Song {
             <button class="btn btn-warning" onclick="app.songsController.addSong('${this._id}')">Add</button>
         </div>
         </div>
-        `;
+        `
   }
 
   get playlistTemplate() {
@@ -34,7 +35,7 @@ export default class Song {
         <button class="btn btn-danger" onclick="app.songsController.removeSong('${this._id}')">Delete</button>
     </div>
     </div>
-        `;
+        `
   }
 
   get nowPlayingTemplate() {

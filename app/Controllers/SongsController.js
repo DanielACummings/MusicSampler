@@ -17,7 +17,15 @@ function _drawPlaylist() {
   document.querySelector("#playlist").innerHTML = template
 }
 
+function _showLoading() {
+  document.querySelector("#songs").innerHTML = "<div><p>loading...</p></div>"
+}
 // function _drawNowPlaying() {
+//   let template = ''
+//   let activeSong =
+//     mySongs.forEach(song => template += song.playlistTemplate)
+//   document.querySelector("#playlist").innerHTML = template
+
 //   let template = song.nowPlayingTemplate
 //   document.querySelector("#now-playing").innerHTML = template
 // }
@@ -50,6 +58,7 @@ export default class SongsController {
   search(e) {
     //NOTE You dont need to change this method
     e.preventDefault();
+    _showLoading()
     try {
       SongService.getMusicByQuery(e.target.query.value);
     } catch (error) {

@@ -1,7 +1,19 @@
-body {
-  background-color: grey;
+header {
+  background-color: black;
 }
 
 #player {
   max-width: 100%;
+}
+
+#search-col {
+  background-color: grey;
+}
+
+#now-playing-col {
+  background-color: white;
+}
+
+#saved-col {
+  background-color: teal;
 }
