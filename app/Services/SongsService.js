@@ -6,7 +6,7 @@ import SongsController from "../Controllers/SongsController.js";
 let _sandBox = axios.create({
   //TODO Change YOURNAME to your actual name
   baseURL: "//bcw-sandbox.herokuapp.com/api/danielabc/songs",
-  timeout: 3000
+  timeout: 5000
 });
 
 class SongsService {

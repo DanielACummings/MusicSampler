@@ -16,9 +16,9 @@ export default class Song {
         <img class="card-img-top " src="${this.albumArt}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">${this.title}</h5>
-            <p class="card-text">Artist: ${this.artist}<br> Collection: ${this.album}<br> price: $${this.price}<br></p>
-            <button onclick="app.songsController.playSong('${this._id}')">Preview</button>
-            <button class="btn btn-warning" onclick="app.songsController.addSong('${this._id}')">Add</button>
+            <p class="card-text">Artist: ${this.artist}<br> Collection: ${this.album}<br> price: $${this.price}</p>
+            <button class="btn btn-warning add-btn" onclick="app.songsController.addSong('${this._id}')">+</button>
+            <button class= "btn-warning" onclick="app.songsController.playSong('${this._id}')">Play</button>
         </div>
         </div>
         `

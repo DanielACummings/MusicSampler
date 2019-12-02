@@ -17,3 +17,9 @@ header {
 #saved-col {
   background-color: teal;
 }
+
+.add-btn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}

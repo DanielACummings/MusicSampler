@@ -72,7 +72,7 @@ export default class SongsController {
    */
   playSong(id) {
     let song = store.State.songs.find(s => s._id == id)
-    document.getElementById("now-playing-col").innerHTML = song.nowPlayingTemplate
+    document.getElementById("now-playing").innerHTML = song.nowPlayingTemplate
   }
   /**
    * Takes in a song id and sends it to the service in order to add it to the users playlist
