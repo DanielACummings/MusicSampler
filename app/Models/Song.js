@@ -17,7 +17,7 @@ export default class Song {
         <div class="card-body">
             <h5 class="card-title">${this.title}</h5>
             <p class="card-text">Artist: ${this.artist}<br> Collection: ${this.album}<br> price: $${this.price}<br></p>
-            <button onclick="app.songsController.playSong('${this._id}')">Play</button>
+            <button onclick="app.songsController.playSong('${this._id}')">Preview</button>
             <button class="btn btn-warning" onclick="app.songsController.addSong('${this._id}')">Add</button>
         </div>
         </div>
@@ -42,7 +42,7 @@ export default class Song {
     return /*html*/ `
     <div>
       <h4>${this.title}</h4>
-      <audio controls src="${this.preview}"></audio>
+      <audio controls autoplay src="${this.preview}"></audio>
     </div>
     `
   }
