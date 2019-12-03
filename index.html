@@ -20,26 +20,26 @@
   <!-- for making search results & songs display in 2 cols: layer with another row -->
 
   <main class="row">
-    <div class="col-12 col-md-3 pt-5" id="search-col">
+    <div class="col-12 col-md-4 pt-5" id="search-col">
       <form onsubmit="app.songsController.search(event)">
         <input type="text" class="form-control" name="query" placeholder="Search For Music" />
         <button class="btn btn-success mt-1 form-control" type="submit">
           Search
         </button>
       </form>
-      <span id="songs">
+      <div class="row" id="songs">
         <!-- template to generate -->
-      </span>
-    </div>
-    <div class="col-12 col-md-6 pt-2" id="now-playing-col">
-      <h5 class="text-center">Now Playing</h5>
-      <div id="now-playing">
-        <!-- template for song playing -->
       </div>
     </div>
-    <div class="col-12 col-md-3 pt-5" id="saved-col">
+    <div class="col-12 col-md-4 pt-5" id="now-playing-col">
+      <h5 class="text-center">Now Playing</h5>
+      <span id="now-playing">
+        <!-- template for song playing -->
+      </span>
+    </div>
+    <div class="col-12 col-md-4 pt-5" id="saved-col">
       <h3 class="text-center">Saved</h3>
-      <div id="playlist">
+      <div class="row" id="playlist">
         <!-- template for playlist -->
       </div>
     </div>
